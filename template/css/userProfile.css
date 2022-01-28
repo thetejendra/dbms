@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: blue;
+}
+.user-profile{
+    height: 300px;
+    width: 300px;
+    position: relative;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    background: url(member-1.png);
+    background-size: 100% 100%;
+    margin: 100px auto;
+    overflow: hidden;
+}
+.user-profile-input{
+    position: absolute;
+    bottom: 0;
+    outline: none;
+    color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 120px;
+    cursor: pointer;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0.5s);
+    opacity: 0;
+}
+.user-profile-input::-webkit-file-upload-button{
+    visibility: hidden;
+
+}
+.user-profile-input::before{
+    content: '\f030';
+    font-family: fontAwesome;
+    font-size: 50px;
+    color: #fff;
+    display: inline-block;
+    -webkit-user-select: none;
+}
+.user-profile-input::after{
+    content: 'Update';
+    font-family: 'arial';
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    top: 70px;
+    font-size: 14px;
+    position: absolute;
+}
+.user-profile-input:hover{
+    opacity: 1;
+}

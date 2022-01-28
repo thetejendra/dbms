@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date & Time | Javascript</title>
+</head>
+<style>
+    .container{
+        border: 5px solid black;
+        background-color: aqua;
+        width: 100px;
+        height: 50px;
+        text-align: center
+    }
+</style>
+<body>
+    <div class="container" id="showClock" my-4 >
+    </div>   
+ 
+    <script>
+     var clock = setInterval(clocktiming, 1000);
+
+     function clocktiming(){
+var d = new Date();
+var t = d.toLocaleTimeString();
+document.getElementById('showClock').innerHTML = t;
+}
+
+ </script>   
+</body>
+</html>

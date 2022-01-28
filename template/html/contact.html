@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Facebook| Home</title>
+	<link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/template/css/contact.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link rel="stylesheet" href="/template/css/navbar.css">
+	<!-- <link rel="stylesheet" href="/template/css/online.css">
+	<link rel="stylesheet" href="/template/css/searchBox.css">
+	<link rel="stylesheet" href="/template/css/sidebar.css">
+	<link rel="stylesheet" href="/template/css/userProfile.css"> -->
+
+</head>
+<body>
+<nav>
+	<div class="nav-left">
+		<img src="/image/logo.png" alt="logo" class="logo">
+		<a href="/template/html/homePage.html" ><b> Home</b></a>
+		
+		<ul>
+			<li><img src="/image/notification.png" ></li>
+			<li><img src="/image/notification.png" ></li>
+			<li><img src="/image/video.png" ></li>
+		</ul>
+		
+		<div id="dark-btn" class="dark-btn-on" >
+			<span></span>
+		</div>
+	</div>
+
+	</div>
+	<div class="nav-right">
+		<div class="search-box">
+			<img src="/image/search.png" alt="">
+			<input type="text" placeholder="Search">
+		</div>
+		<div class="nav-user-icon online" onclick="settingsMenuToggle()">
+        <img src="/image/profile-pic.png" alt="profile pic">
+		</div>
+	</div>
+
+	<!-- settings-menu------------- -->
+	<div class="settings-menu">
+		<div class="settings-menu-inner">
+			<div class="user-profile">
+				<img src="/image/profile-pic.png" >
+				<div>
+					<p>Tejendra</p>
+					<a href="/template/userProfile.html">See your profile</a>
+				</div>
+			</div>
+			<hr>
+			<div class="user-profile">
+				<img src="/image/feedback.png" >
+				<div>
+					<p>Feedback</p>
+					<a href="#">Give your feedback</a>
+				</div>
+			</div>
+            <hr>
+
+			<div class="settings-links">
+				<img src="/image/setting.png" class="settings-icon">
+				<a href="#">Setting & Privacy <img src="/image/arrow.png" width="10px"></a>
+			</div>
+			<div class="settings-links">
+				<img src="/image/setting.png" class="settings-icon">
+				<a href="#">Setting & Privacy <img src="/image/arrow.png" width="10px"></a>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<div class="contact">
+    <div class="content">
+        <h2>Contact us </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+</div>
+
+<div class="container">
+<div class="contactInfo">
+    <div class="box">
+        <div class="icon"><i class="fas fa-envelope"></i></div>
+        <div class="text">
+            <h3>Address</h3>
+            <p>IIIT</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="icon"><i class="fas fa-envelope"></i></div>
+        <div class="text">
+            <h3>Email</h3>
+            <p>IIIT</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="icon"><i class="fas fa-envelope"></i></div>
+        <div class="text">
+            <h3>Location</h3>
+            <p>IIIT</p>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="container">
+<div class="input-box">
+    <h3>Send Message</h3>
+    <form action="">
+    <div class="inputBox">
+        <span>Name :</span>
+        <input type="text" name="name" required>
+    </div>
+    <br>
+    <div class="inputBox">
+        <span>Email :</span>
+        <input type="text" name="name" required>
+    </div>
+    <br>
+    <div class="inputBox">
+        <span>Comments :</span>
+        <textarea name="comment" id="" cols="50" rows="5" required></textarea>
+    </div>
+    <button class="btn">Submit</button>
+</form>
+</div>
+</div>
+
+<!-- -----------foooter-------------------- -->
+
+
+<!-- ----java-script---- -->
+<script src="/script.js"></script>
+</body>
+</html>

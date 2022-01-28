@@ -1,0 +1,44 @@
+body{
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+.contact{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    align-items: center;
+    padding: 50px 100px;
+    justify-content: center;
+    /* background: url(); */
+    background: white;
+    /* min-height: 100vh; */
+    flex-direction: column;
+}
+.contact .content{
+    max-width: 800px;
+    text-align: center;
+}
+.contact .content h2{
+    font-size: 36px;
+    font-weight: 500;
+}
+.contact .content p{
+    font-weight: 300;
+}
+.container .input-box{
+
+}
+form{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 15px 10px;
+    backface-visibility: transparent;
+    background-color: aqua;
+    width: 400px;
+    height: 250px;
+}
+.btn{
+    background-color: green;
+    font-size: 20px;
+}

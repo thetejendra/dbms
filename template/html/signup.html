@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="/template/css/signup.css">
+</head>
+
+<body>
+     <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()"> Register</button>
+            </div>
+            
+
+            <form action="/index.html" class="input-group" id="login" onsubmit="return validate();">
+                <input type="text" class="input-field" id="uname" placeholder="Username" > 
+                <input type="password" class="input-field" id="pass" placeholder="Enter Password">
+                <input type="checkbox" name="" id="" class="check-box"> <span>Remember me</span> 
+                <button type="submit" class="submit-btn"> Login</button>
+            </form>
+
+            <form action="/index.html" class="input-group" id="register" onsubmit="return validate();">
+                <input type="text" class="input-field" placeholder="Name" > 
+                <input type="email" class="input-field" id="uname" placeholder="Email" > 
+                <input type="password" class="input-field" id="pass" placeholder="Enter Password" >
+                <input type="checkbox" name="" id="" class="check-box"> <span>I agree to this term & conditions</span> 
+                <button type="submit" class="submit-btn"> Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/template/js/signup.js">
+        function validate(){
+            var uname = document.getElementById("uname");
+            var password = document.getElementById("pass");
+        }
+        if(uname.value.trim()==" "){
+         alert("Blank Username");
+         return false;
+         console.log("jdsjsjk");
+        }
+        else if(password.value.trim()==" "){
+         alert("Blank Password");
+         return false;
+        }
+        else if(password.value.trim().length<8){
+         alert("Your password is too short");
+         return false;
+        }
+        else{
+            return true;
+        }
+    </script>
+</body>
+</html>
