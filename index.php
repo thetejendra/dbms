@@ -100,7 +100,6 @@ include "includes/navbar.php";
 	?>
 
 </div>
-<!-- <div class="left-sidebar" id="left-sidebar" > -->
     <div class="right-sidebar" id="right-sidebar" >
 		<div class="imp-links">
 			<a href="rightSideBar/placement/placement.php"><img src="image/news.png" alt="">Placement Cell</a>
@@ -109,10 +108,10 @@ include "includes/navbar.php";
 			<a href="#"><img src="image/marketplace.png" alt="">Polls</a>
 			<a href="#"><img src="image/news.png" alt="">Tags</a>
 		</div>
-	</div>
 <?php
 include "includes/footer.php";
 ?>
+	</div>
 
 
 
