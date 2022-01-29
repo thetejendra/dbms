@@ -1,8 +1,11 @@
 <?php 
 session_start();
 include "../db_conn.php";
-if(isset($_SESSION['name'])){
-
+?>
+<?php 
+	if(!isset($_SESSION['name'])){
+	   header("Location: login.php");
+	}else{   
 
 ?>
 
@@ -267,7 +270,7 @@ if(isset($_SESSION['name'])){
 					<span><?php echo $rows['added_on'];?></span>
 				</div>
 			</div>
-			<a href="delete.php?id<?php echo $_SESSION['id']; ?>">Delete</a>
+			<a href="delete.php?id=<?php echo $rows['id']; ?>">Delete</a>
 		 </div>
 
 		<br>

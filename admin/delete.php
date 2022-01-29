@@ -1,9 +1,10 @@
 <?php 
 session_start();
-include "db_conn.php";
+include "../db_conn.php";
 
 if(isset($_GET['id'])){
-    if($sql= mysqli_query("DELETE FROM posts WHERE id=' ".$_GET['id']." ' ")){
+    $sql =  "DELETE FROM posts WHERE id=' ".$_GET['id']." ' ";
+	if($result = mysqli_query($conn , $sql)){
         header("Location: dashboard.php");
     }
 }
