@@ -1,5 +1,6 @@
 <?php 
 session_start();
+include "../db_conn.php";
 if(isset($_SESSION['name'])){
 
 
@@ -11,6 +12,7 @@ if(isset($_SESSION['name'])){
   <head>
     <meta charset="UTF-8">
     <title>  Admin Dashboard | CodingLab </title>
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="dashboard.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -80,7 +82,7 @@ if(isset($_SESSION['name'])){
 
     <div class="home-content">
       <div class="overview-boxes">
-        <div class="box">
+    <!--     <div class="box">
           <div class="right-side">
             <div class="box-topic">Total Order</div>
             <div class="number">40,876</div>
@@ -186,55 +188,53 @@ if(isset($_SESSION['name'])){
           <ul class="top-sales-details">
             <li>
             <a href="#">
-              <!--<img src="images/sunglasses.jpg" alt="">-->
               <span class="product">Vuitton Sunglasses</span>
             </a>
             <span class="price">$1107</span>
           </li>
           <li>
             <a href="#">
-               <!--<img src="images/jeans.jpg" alt="">-->
+            
               <span class="product">Hourglass Jeans </span>
             </a>
             <span class="price">$1567</span>
           </li>
           <li>
             <a href="#">
-             <!-- <img src="images/nike.jpg" alt="">-->
+          
               <span class="product">Nike Sport Shoe</span>
             </a>
             <span class="price">$1234</span>
           </li>
           <li>
             <a href="#">
-              <!--<img src="images/scarves.jpg" alt="">-->
+              
               <span class="product">Hermes Silk Scarves.</span>
             </a>
             <span class="price">$2312</span>
           </li>
           <li>
             <a href="#">
-              <!--<img src="images/blueBag.jpg" alt="">-->
+              
               <span class="product">Succi Ladies Bag</span>
             </a>
             <span class="price">$1456</span>
           </li>
           <li>
             <a href="#">
-              <!--<img src="images/bag.jpg" alt="">-->
+      
               <span class="product">Gucci Womens's Bags</span>
             </a>
             <span class="price">$2345</span>
           <li>
             <a href="#">
-              <!--<img src="images/addidas.jpg" alt="">-->
+              
               <span class="product">Addidas Running Shoe</span>
             </a>
             <span class="price">$2345</span>
           </li>
 <li>
             <a href="#">
-             <!--<img src="images/shirt.jpg" alt="">-->
               <span class="product">Bilack Wear's Shirt</span>
             </a>
             <span class="price">$1245</span>
@@ -243,7 +243,55 @@ if(isset($_SESSION['name'])){
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
+
+  <?php
+	$sql =  "SELECT * FROM posts ORDER BY id DESC";
+	$result = mysqli_query($conn , $sql);
+	if(mysqli_num_rows($result)>0){
+		while($rows =mysqli_fetch_assoc($result)){
+      if($rows['name']===$_SESSION['name']){
+	?>	   
+	 <div class="post-container">
+		 <div class="post-row">
+			<div class="user-profile">
+				<img src="image/profile-pic.png" >
+				<div>
+				<p>
+					 <?php 
+				// echo $rows['name'];
+					   ?>
+             <?php echo $_SESSION['name']; ?>
+					   </p>
+					   <br>
+					<span><?php echo $rows['added_on'];?></span>
+				</div>
+			</div>
+			<a href="delete.php?id<?php echo $_SESSION['id']; ?>" download="photo" >Menu</a>
+		 </div>
+
+		<br>
+		<p class="post-text"> <?php echo $rows['content'];?> </p>
+		<img src="<?php echo $rows['image']; ?>" alt="image">
+
+		<div class="post-row">
+         <div class="activity-icons">
+			 <div><img src="image/like-blue.png" alt="">1k</div>
+			 <div><img src="image/comments.png" alt="">1k</div>
+			 <div><img src="image/share.png" alt="">1k</div>
+		 </div>
+		 <div class="post-profile-icon">
+			 <img src="image/profile-pic.png" >
+		 </div>
+		</div>
+	 </div>
+
+	<? php
+} } ?>
+
+<?php 
+	}}
+	?>
 
   <script>
    let sidebar = document.querySelector(".sidebar");
@@ -266,5 +314,6 @@ else{
 	$_SESSION['message']="Login to continue ";
 	header("Location : admin/login.php");
   // echo "MC";
+}
 }
 ?>

@@ -9,12 +9,15 @@
 	</div>
 	</div>
 
-	<form action="" method="post">
-<div class="search-box">
-	<img src="image/search.png" alt="">
+	<form action="search.php" method="post">
+<!-- <div class="search-box"> -->
 	<!-- <input type="text" placeholder="Search" > -->
-	<input type="text" id="search" placeholder="Search" >
-</div>
+	<!-- <input type="text" id="search" placeholder="Search" id="search"> -->
+	<textarea name="search" id="search" placeholder="search" required></textarea>
+	<!-- <input type="submit"><a href="search.php"><img src="image/search.png" alt=""></a> -->
+	<button type="submit" name="submit" ><img src="image/search.png" alt=""></button>
+	
+<!-- </div> -->
 </form>
 <div id="display"></div>
 
@@ -30,7 +33,7 @@
 			<div class="user-profile">
 				<img src="image/profile-pic.png" >
 				<div>
-					<p>Tejendra</p>
+					<p> <?php echo $_SESSION['name']; ?></p>
 					<a href="admin/dashboard.php">See your profile</a>
 				</div>
 			</div>
@@ -39,7 +42,7 @@
 				<img src="image/feedback.png" >
 				<div>
 					<p>Feedback</p>
-					<a href="#">Give your feedback</a>
+					<a href="../php/feedback.php">Give your feedback</a>
 				</div>
 			</div>
             <hr>
@@ -49,8 +52,8 @@
 			</div><hr>
 			<center>
 			<div class="logout" style="cursor: pointer;">
-            <form action="admin/login.php" method="post">
-				<button type="submit" onclick="admin/login.php" name="logout">Logout</button>
+            <form action="admin/logout.php" method="post">
+				<button type="submit" onclick="admin/logout.php" name="logout">Logout</button>
                 <!-- <input type="submit" value="Logout" name="logout"> -->
                 </form>
 			</div>

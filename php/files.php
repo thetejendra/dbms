@@ -14,15 +14,17 @@ if(isset($_POST['upload'])){
         $folder = "../upload/".$image;
 
     $sql= "insert into posts(name, content, image) values('$name', '$content', '$image')";
-    // $result= mysqli_query($conn, $sql);
-    $result= mysqli_query($conn, SELECT * FROM posts);
+    $result= mysqli_query($conn, $sql);
+    // $result= mysqli_query($conn, "SELECT * FROM posts ");
 
     // move_uploaded_file($image['tmp_name'], "../upload/".$image['name']);
     if (move_uploaded_file($tempname, $folder))  {
         header("Location: ../index.php");
-    }else{
-        $msg = "Failed to upload image";
-        echo $msg;
-  }
+    }
+//     else{
+//         $msg = "Failed to upload image";
+//         echo $msg;
+//   }
+header("Location: ../index.php");
 }
 ?>

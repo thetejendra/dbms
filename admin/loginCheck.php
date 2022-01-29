@@ -23,6 +23,7 @@ if (isset($_POST['login'])) {
             $_SESSION['name']=$name;
             // header("Location: dashboard.php");
             header("Location: ../index.php");
+            die;
         }
         else{
             header("Location: login.php");

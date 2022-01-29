@@ -1,3 +1,12 @@
+<?php 
+session_start();
+include "../db_conn.php";
+if(!isset($_SESSION['name'])){
+   header("Location: admin/login.php");
+}else{   
+
+?>
+
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">

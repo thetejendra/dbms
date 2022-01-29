@@ -1,5 +1,12 @@
+<?php 
+session_start();
+include "../db_conn.php";
+// if(isset($_SESSION['message'])){
+
+
+?>
+
 <!DOCTYPE html>
-<!-- Coding by CodingLab | www.codinglabweb.com-->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
@@ -10,12 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
-<?php
-            if(isset($_SESSION['message'])){
-                echo $_SESSION['message'];
-                unset($_SESSION['message']);
-            }
-            ?>
   <div class="container">
     <input type="checkbox" id="flip">
     <div class="cover">
@@ -33,6 +34,12 @@
       </div>
     </div>
     <div class="forms">
+<?php
+            if(isset($_SESSION['message'])){
+                echo $_SESSION['message'];
+                unset($_SESSION['message']);
+            }
+            ?>
 
         <div class="form-content">
           <div class="login-form">
@@ -83,3 +90,6 @@
   </div>
 </body>
 </html>
+<?php
+// }
+?>
