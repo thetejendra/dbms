@@ -11,7 +11,7 @@ if(isset($_SESSION['name'])){
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title>  Admin Dashboard | CodingLab </title>
+    <title>  Admin Dashboard</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="dashboard.css">
     <!-- Boxicons CDN Link -->
@@ -267,7 +267,7 @@ if(isset($_SESSION['name'])){
 					<span><?php echo $rows['added_on'];?></span>
 				</div>
 			</div>
-			<a href="delete.php?id<?php echo $_SESSION['id']; ?>" download="photo" >Menu</a>
+			<a href="delete.php?id<?php echo $_SESSION['id']; ?>">Delete</a>
 		 </div>
 
 		<br>
@@ -280,9 +280,6 @@ if(isset($_SESSION['name'])){
 			 <div><img src="image/comments.png" alt="">1k</div>
 			 <div><img src="image/share.png" alt="">1k</div>
 		 </div>
-		 <div class="post-profile-icon">
-			 <img src="image/profile-pic.png" >
-		 </div>
 		</div>
 	 </div>
 
@@ -292,6 +289,7 @@ if(isset($_SESSION['name'])){
 <?php 
 	}}
 	?>
+  </div>
 
   <script>
    let sidebar = document.querySelector(".sidebar");
