@@ -100,7 +100,8 @@ include "includes/navbar.php";
 	?>
 
 </div>
-    <div class="left-sidebar" id="left-sidebar" >
+<!-- <div class="left-sidebar" id="left-sidebar" > -->
+    <div class="right-sidebar" id="right-sidebar" >
 		<div class="imp-links">
 			<a href="rightSideBar/placement/placement.php"><img src="image/news.png" alt="">Placement Cell</a>
 			<a href="#"><img src="image/friends.png" alt="">Institute Resources</a>		
