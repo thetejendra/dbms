@@ -34,12 +34,14 @@ include "../db_conn.php";
       </div>
     </div>
     <div class="forms">
+    <div class="message" style="color: red;" >
 <?php
             if(isset($_SESSION['message'])){
-                echo $_SESSION['message'];
+                echo "<b>".$_SESSION['message']."</b>";
                 unset($_SESSION['message']);
             }
             ?>
+            </div>
 
         <div class="form-content">
           <div class="login-form">

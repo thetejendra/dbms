@@ -7,32 +7,14 @@ include "includes/navbar.php";
 <?php 
 
 if(isset($_SESSION['name'])){
-
-
 ?>
-
-
-<script src="/ckeditor/ckeditor/ckeditor.js"></script>
-
-<div class="container">
-	<!--------------- left-sidebar------------- -->
-	<div class="left-sidebar" id="left-sidebar" >
-		<div class="imp-links">
-			<a href="rightSideBar/placement/placement.php"><img src="image/news.png" alt="">Placement Cell</a>
-			<a href="#"><img src="image/friends.png" alt="">Institute Resources</a>		
-			<a href="#"><img src="image/group.png" alt="">Questions</a>		
-			<a href="#"><img src="image/marketplace.png" alt="">Polls</a>
-			<a href="#"><img src="image/news.png" alt="">Tags</a>
-		</div>
-	</div>
-
 	<!-- ---------- main-sidebar------------- -->
 	<div class="main-content" onclick="clicked">
 
 
 	   <?php
 	// $user= $_SESSION['name'];
-	$sql =  "SELECT * FROM posts ORDER BY id DESC ";
+	$sql =  "SELECT * FROM comments ORDER BY id DESC ";
 	$result = mysqli_query($conn , $sql);
 	if(mysqli_num_rows($result)>0){
 		while($rows =mysqli_fetch_assoc($result)){
@@ -48,7 +30,7 @@ if(isset($_SESSION['name'])){
 					   ?>
 					   </p>
 					   <br>
-					<span><?php echo $rows['added_on'];?></span>
+					<span><?php echo $rows['commented_on'];?></span>
 				</div>
 			</div>
 			<!-- <a href="#" download="photo" >Menu</a> -->
@@ -56,15 +38,15 @@ if(isset($_SESSION['name'])){
 
 		<br>
 		<p class="post-text"> <?php echo $rows['content'];?> </p>
-		<img src="<?php echo $rows['image']; ?>" alt="image">
+		<!-- <img src="<?php echo $rows['image']; ?>"> -->
 
-		<div class="post-row">
+		<!-- <div class="post-row">
          <div class="activity-icons">
 			 <div><img src="image/like-blue.png" alt="">1k</div>
 			 <div><img src="image/comments.png" alt="">1k</div>
 			 <div><img src="image/share.png" alt="">1k</div>
 		 </div>
-		</div>
+		</div> -->
 	 </div>
 
 	<? php
@@ -97,27 +79,23 @@ if(isset($_SESSION['name'])){
 		 <div class="post-input-container">
 		 <div class="add-post-links">
 			
-			<form action="php/files.php" method="post" enctype="multipart/form-data">
+			<form action="php/comments.php" method="post" enctype="multipart/form-data">
 				<div>
 					<textarea name="content" id="editor" placeholder="what's on your mind"></textarea>
-				  <label for="image">Photos/Video</label>
-				  <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" multiple>
+				  <!-- <label for="image">Photos/Video</label>
+				  <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" multiple> -->
 				</div>
 				<div>
-				  <input type="submit" name="upload" value="upload">
+				  <input type="submit" name="upload" value="upload" class="add_comment_btn">
 				</div>
 			  </form>
 
 		 </div>
 			</div>
 	 </div>
-
 	<?php
 include "includes/footer.php";
 ?>
-
-
-
 
 <?php
 }

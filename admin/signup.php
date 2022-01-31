@@ -17,7 +17,9 @@ if(isset($_POST['signup'])){
 
     $sql1 = "SELECT * FROM users WHERE name='$name' or email='$email' ";
     $result1 = mysqli_query($conn, $sql1);
-    if(mysqli_num_rows($result1)>0){
+    if($rows= mysqli_num_rows($result1)>0){
+        $user_id = $rows['id'];
+        $_SESSION['user_id']=$user_id;
         $_SESSION['message']="Account already exists !! Please Login to Continue"; 
         header("Location: login.php");
     }

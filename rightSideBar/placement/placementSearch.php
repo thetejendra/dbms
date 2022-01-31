@@ -74,8 +74,8 @@ if(isset($_SESSION['name'])){
 
 <form action="placementSearch.php" method="post">
       <div class="search-box">
-        <input type="text" name="search" id="search" placeholder="Search...">
-        <button type="submit" name="submit"><i class='bx bx-search' ></i></button>
+        <input type="text" id="search" placeholder="Search...">
+        <i class='bx bx-search' ></i>
         </form>
       </div>
 
@@ -90,11 +90,15 @@ if(isset($_SESSION['name'])){
 
       <!-- <div class="sales-boxes" > -->
 
-<?php 
-	$sql =  "SELECT * FROM placement ORDER BY id DESC ";
+      <?php
+if(isset($_POST['search']) && isset($_POST['submit'])){
+	$txtsearch = $_POST['search'];
+	// $sql =  "SELECT * FROM posts ORDER BY id DESC ";
+	$sql =  "SELECT * FROM placement where name LIKE '%$txtsearch%' ";
 	$result = mysqli_query($conn , $sql);
 	if(mysqli_num_rows($result)>0){
-	while($rows =mysqli_fetch_assoc($result)){
+		while($rows =mysqli_fetch_assoc($result)){
+			if($txtsearch== $rows['name'] ){
 	?>
     <div class="container1">
         <div class="row">
@@ -124,53 +128,18 @@ if(isset($_SESSION['name'])){
 
     </div>
     </div>
-
-    <?php 
-	}}
+    <? php
+ }}
+?>
+<?php 
+	}
+}}
+else{
+	header("Location: placement.php");
+}
 	?>
   </div>
     
-    <div class="top-sales box">
-
-    <?php 
-	$sql =  "SELECT * FROM placement ORDER BY name='$name' DESC ";
-	$result = mysqli_query($conn , $sql);
-	if(mysqli_num_rows($result)>0){
-	while($rows =mysqli_fetch_assoc($result)){
-	?>
-    <div class="container1">
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="our-team">
-                    <div class="pic">
-                    <img src="<?php echo $rows['image']; ?>">
-                    </div>
-                    <h3 class="title"><?php
-                    echo $rows['name'];
-                    ?>
-                    </h3>
-                    <span class="post"><?php
-                    echo $rows['role'];
-                    ?></span>
-                    <span> company :<?php
-                    echo $rows['company'];
-                    ?></span>
-                    <ul class="social">
-                        <li><a href="#" class="fa fa-facebook"></a></li>
-                        <li><a href="#" class="fa fa-twitter"></a></li>
-                        <li><a href="#" class="fa fa-google-plus"></a></li>
-                        <li><a href="#" class="fa fa-linkedin"></a></li>
-                    </ul>
-                </div>
-            </div>          
-
-    </div>
-    </div>
-
-    <?php 
-	}}
-	?>
-      </div>
   </section> 
 
   <script>
@@ -189,8 +158,9 @@ sidebarBtn.onclick = function() {
 </html>
 <?php
 }
-else{
-	$_SESSION['message']="Login to continue ";
-	header("Location : ../admin/login.php");
+// else{
+// 	$_SESSION['message']="Login to continue ";
+// 	header("Location : ../admin/login.php");
+// }
 }
 ?>

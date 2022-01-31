@@ -9,13 +9,10 @@
 	</div>
 	</div>
 
-	<form action="search.php" method="post">
-<!-- <div class="search-box"> -->
-	<!-- <input type="text" placeholder="Search" > -->
-	<!-- <input type="text" id="search" placeholder="Search" id="search"> -->
+	<!-- <div class="search-box"> -->
+		 <form action="search.php" method="post">
 	<textarea name="search" id="search" placeholder="search" required></textarea>
-	<!-- <input type="submit"><a href="search.php"><img src="image/search.png" alt=""></a> -->
-	<button type="submit" name="submit" ><img src="image/search.png" alt=""></button>
+	<button type="submit" name="submit" ><img src="image/search.png" alt=""></button> 
 	
 <!-- </div> -->
 </form>
@@ -61,3 +58,17 @@
 		</div>
 	</div>
 </nav>
+
+<script src="/ckeditor/ckeditor/ckeditor.js"></script>
+
+<div class="container">
+	<!--------------- left-sidebar------------- -->
+	<div class="left-sidebar" id="left-sidebar" >
+		<div class="imp-links">
+			<a href="rightSideBar/placement/placement.php"><img src="image/news.png" alt="">Placement Cell</a>
+			<a href="rightSideBar/institute/institute.php"><img src="image/friends.png" alt="">Institute Resources</a>		
+			<a href="#"><img src="image/group.png" alt="">Questions</a>		
+			<a href="#"><img src="image/marketplace.png" alt="">Polls</a>
+			<a href="#"><img src="image/news.png" alt="">Tags</a>
+		</div>
+	</div>

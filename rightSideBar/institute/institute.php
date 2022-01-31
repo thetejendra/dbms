@@ -11,7 +11,7 @@ if(isset($_SESSION['name'])){
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> Placement</title>
+    <title> IIIT NR</title>
     <link rel="stylesheet" href="placementPost.css">
     <link rel="stylesheet" href="placement.css">
     <!-- Boxicons CDN Link -->

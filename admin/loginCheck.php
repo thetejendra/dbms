@@ -12,16 +12,16 @@ if (isset($_POST['login'])) {
 	$password = $_POST['password'];
     $password = mysqli_real_escape_string($conn, $password);
     $password= htmlentities($password);
-    // $password= password_hash($password, PASSWORD_BCRYPT);
     
 		$sql = "SELECT password FROM users WHERE name='$name' ";
 
 		$result = mysqli_query($conn, $sql);
         $rows = mysqli_fetch_assoc($result);
+        $user_id = $rows['id'];
         $pass = $rows['password'];
         if(password_verify($password, $pass)){
+            $_SESSION['user_id']=$user_id;
             $_SESSION['name']=$name;
-            // header("Location: dashboard.php");
             header("Location: ../index.php");
             die;
         }
@@ -29,17 +29,6 @@ if (isset($_POST['login'])) {
             header("Location: login.php");
                  $_SESSION['message']=" invalid Login Credentials";
         }
-        // if(mysqli_num_rows($result)){
-        //    $rows = mysqli_fetch_assoc($result);
-        //    if($rows['password']=== $pass){
-	    //      header("Location: ../index.php");
-        //    }else{
-	    //      header("Location: login.php");
-        //      $_SESSION['message']=" invalid Login Credentials";
-        //    }
-// else{
-// 	header("Location: login.php");
-// }
  }
 }
 
