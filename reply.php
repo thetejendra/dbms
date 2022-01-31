@@ -14,7 +14,7 @@ if(isset($_SESSION['name'])){
 
 	   <?php
 	// $user= $_SESSION['name'];
-	$sql =  "SELECT * FROM comments ORDER BY id DESC ";
+	$sql =  "SELECT * FROM comments ORDER BY id ASC ";
 	$result = mysqli_query($conn , $sql);
 	if(mysqli_num_rows($result)>0){
 		while($rows =mysqli_fetch_assoc($result)){
@@ -38,15 +38,6 @@ if(isset($_SESSION['name'])){
 
 		<br>
 		<p class="post-text"> <?php echo $rows['content'];?> </p>
-		<!-- <img src="<?php echo $rows['image']; ?>"> -->
-
-		<!-- <div class="post-row">
-         <div class="activity-icons">
-			 <div><img src="image/like-blue.png" alt="">1k</div>
-			 <div><img src="image/comments.png" alt="">1k</div>
-			 <div><img src="image/share.png" alt="">1k</div>
-		 </div>
-		</div> -->
 	 </div>
 
 	<? php
@@ -81,12 +72,12 @@ if(isset($_SESSION['name'])){
 			
 			<form action="php/comments.php" method="post" enctype="multipart/form-data">
 				<div>
-					<textarea name="content" id="editor" placeholder="what's on your mind"></textarea>
+					<textarea name="content" id="editor" placeholder="what's on your mind" required></textarea>
 				  <!-- <label for="image">Photos/Video</label>
 				  <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" multiple> -->
 				</div>
-				<div>
-				  <input type="submit" name="upload" value="upload" class="add_comment_btn">
+				<div >
+				  <button type="submit" name="upload" class="add_comment_btn">upload</button>
 				</div>
 			  </form>
 
